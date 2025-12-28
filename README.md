@@ -23,8 +23,6 @@ Predicts whether an email is spam using text processing and ML classification.
 ML regression model to estimate real estate prices using structured data.  
 🔗 *Feature*: EDA → feature engineering → model comparison.
 
-*(If you create demos or notebooks with plots, mention them here)*
-
 ---
 
 ## ⭐ Skills & Tools
