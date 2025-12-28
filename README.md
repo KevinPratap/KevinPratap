@@ -1,9 +1,43 @@
 # 👋 Hi, I’m Kevin Pratap Sidhu
 
-I’m an MBA Technology (AI) student at SVKM’s NMIMS with a passion for artificial intelligence, machine learning, and data-driven solutions.
+I’m an **MBA Technology (AI)** student at **SVKM’s NMIMS** focused on building real-world **Machine Learning** and **Data Analytics** solutions.
 
-I build real-world machine learning projects using Python, Scikit-Learn, and SQL that solve practical problems and demonstrate core competencies in predictive modeling and data analytics.
+---
 
-🔭 I’m currently seeking **AI/ML internship opportunities** to apply and expand my skills.  
-🌱 I’m continuously learning and exploring advanced ML techniques, model optimization, and deployment best practices.  
-📫 You can reach me at **pratapkevin8@gmail.com** or connect with me on [LinkedIn](https://www.linkedin.com/in/kevin-sidhu-71b127185/).
+## 🔎 What I Do
+
+🔹 **Python | Scikit-Learn | Pandas | NumPy**  
+🔹 **Machine Learning Models & Evaluation**  
+🔹 **Data Visualization & SQL Analytics**  
+🔹 ML problem solving with clean, documented code
+
+---
+
+## 📌 Projects You Must See
+
+### 💡 Email Spam Detection  
+Predicts whether an email is spam using text processing and ML classification.  
+🔗 *Feature*: Data cleaning → model training → performance metrics.
+
+### 📊 Housing Price Predictor  
+ML regression model to estimate real estate prices using structured data.  
+🔗 *Feature*: EDA → feature engineering → model comparison.
+
+*(If you create demos or notebooks with plots, mention them here)*
+
+---
+
+## ⭐ Skills & Tools
+
+**Languages:** Python, SQL, TypeScript (basic)  
+**ML:** Scikit-Learn, Matplotlib, Seaborn  
+**Data:** Pandas, NumPy  
+**Tools:** Git, GitHub, Jupyter
+
+---
+
+## 📬 Let’s Connect
+
+🔗 LinkedIn: https://www.linkedin.com/in/your-linkedin-username  
+📧 Email: pratapkevin8@gmail.com
+
