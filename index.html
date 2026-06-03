@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin Pratap — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Geist', system-ui, -apple-system, sans-serif;
+      font-feature-settings: 'liga' 1;
+      color: #171717;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    a { color: #0072f5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex; justify-content: center; gap: 2rem;
+      padding: 0.85rem 1rem;
+    }
+    nav a {
+      font-size: 0.875rem; font-weight: 500; color: #4d4d4d;
+      transition: color 0.15s;
+    }
+    nav a:hover { color: #171717; text-decoration: none; }
+
+    /* ── Sections ── */
+    section { padding: 5rem 1.5rem; max-width: 800px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Geist Mono', monospace;
+      font-size: 0.75rem; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.08em; color: #808080; margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 600;
+      line-height: 1.08; letter-spacing: -0.04em; margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 1.75rem; font-weight: 600; line-height: 1.2;
+      letter-spacing: -0.03em; margin-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.125rem; font-weight: 600; line-height: 1.3;
+      letter-spacing: -0.02em; margin-bottom: 0.25rem;
+    }
+    p { color: #4d4d4d; font-size: 1rem; line-height: 1.65; }
+    .muted { color: #808080; font-size: 0.875rem; }
+
+    /* ── Hero ── */
+    .hero { padding-top: 6rem; padding-bottom: 4rem; text-align: center; }
+    .hero h1 { margin-bottom: 0.5rem; }
+    .hero .tagline { font-size: 1.125rem; color: #4d4d4d; font-weight: 400; margin-bottom: 2rem; }
+    .hero .badges { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .badge {
+      background: #f5f5f5; color: #4d4d4d; font-size: 0.8125rem;
+      font-weight: 500; padding: 0.35rem 0.75rem; border-radius: 9999px;
+    }
+    .hero-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: 'Geist', sans-serif; font-size: 0.9375rem; font-weight: 500;
+      padding: 0.6rem 1.25rem; border-radius: 8px; cursor: pointer;
+      transition: all 0.15s; text-decoration: none;
+    }
+    .btn-primary { background: #171717; color: #fff; border: 1px solid #171717; }
+    .btn-primary:hover { background: #000; text-decoration: none; }
+    .btn-outline {
+      background: #fff; color: #171717;
+      box-shadow: rgba(0,0,0,0.08) 0px 0px 0px 1px;
+    }
+    .btn-outline:hover { background: #fafafa; text-decoration: none; }
+
+    /* ── About ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+    .edu-card {
+      padding: 1.25rem; border-radius: 10px;
+      box-shadow: rgba(0,0,0,0.06) 0px 0px 0px 1px, rgba(0,0,0,0.03) 0px 2px 4px;
+    }
+    .edu-card .year { font-family: 'Geist Mono', monospace; font-size: 0.75rem; color: #808080; }
+    .edu-card .degree { font-weight: 600; margin: 0.25rem 0; }
+    .edu-card .school { color: #4d4d4d; font-size: 0.9375rem; }
+
+    /* ── Skills ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.75rem; margin-top: 1.5rem; }
+    .skill-tag {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.6rem 0.85rem; border-radius: 8px; font-size: 0.875rem; font-weight: 500;
+      box-shadow: rgba(0,0,0,0.05) 0px 0px 0px 1px;
+    }
+    .skill-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-blue { background: #0072f5; }
+    .dot-green { background: #16a34a; }
+    .dot-amber { background: #d97706; }
+    .dot-purple { background: #9333ea; }
+
+    /* ── Projects ── */
+    .projects-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+    .project-card {
+      padding: 1.5rem; border-radius: 10px;
+      box-shadow: rgba(0,0,0,0.06) 0px 0px 0px 1px, rgba(0,0,0,0.03) 0px 2px 4px;
+      transition: box-shadow 0.2s;
+    }
+    .project-card:hover { box-shadow: rgba(0,0,0,0.08) 0px 0px 0px 1px, rgba(0,0,0,0.06) 0px 4px 12px; }
+    .project-card .stack { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem; }
+    .project-card .stack span {
+      font-family: 'Geist Mono', monospace; font-size: 0.6875rem; font-weight: 500;
+      color: #808080; background: #f5f5f5; padding: 0.2rem 0.5rem; border-radius: 4px;
+    }
+
+    /* ── Contact ── */
+    .contact-links { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+    .contact-card {
+      display: flex; align-items: center; gap: 0.75rem;
+      padding: 0.85rem 1.25rem; border-radius: 10px;
+      box-shadow: rgba(0,0,0,0.06) 0px 0px 0px 1px, rgba(0,0,0,0.03) 0px 2px 4px;
+      transition: box-shadow 0.2s; color: #171717; text-decoration: none;
+    }
+    .contact-card:hover { box-shadow: rgba(0,0,0,0.1) 0px 0px 0px 1px, rgba(0,0,0,0.06) 0px 4px 8px; text-decoration: none; }
+    .contact-card .icon { font-size: 1.25rem; }
+    .contact-card .label { font-weight: 500; font-size: 0.9375rem; }
+    .contact-card .handle { color: #808080; font-size: 0.8125rem; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center; padding: 3rem 1.5rem; border-top: 1px solid rgba(0,0,0,0.06);
+      color: #808080; font-size: 0.8125rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 640px) {
+      section { padding: 3rem 1rem; }
+      .hero { padding-top: 4rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      nav { gap: 1.25rem; padding: 0.75rem 0.5rem; font-size: 0.8125rem; }
+    }
+    @media (max-width: 380px) {
+      .contact-links { flex-direction: column; }
+      .hero-links { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero">
+  <h1>Kevin Pratap</h1>
+  <p class="tagline">Data Science & AI student building intelligent systems.</p>
+  <div class="badges">
+    <span class="badge">🎓 MBATech AI '28</span>
+    <span class="badge">📍 Mumbai, India</span>
+    <span class="badge">🔬 ML · CV · NLP</span>
+  </div>
+  <div class="hero-links">
+    <a href="https://github.com/KevinPratap" class="btn btn-primary" target="_blank">GitHub ↗</a>
+    <a href="#contact" class="btn btn-outline">Get in touch</a>
+  </div>
+</section>
+
+<!-- ═══════════ ABOUT ═══════════ -->
+<section id="about">
+  <span class="section-label">About</span>
+  <h2>Education & Background</h2>
+  <div class="about-grid">
+    <div class="edu-card">
+      <span class="year">2024 — 2028</span>
+      <p class="degree">MBATech in Artificial Intelligence</p>
+      <p class="school">NMIMS MPSTME, Mumbai</p>
+    </div>
+    <div>
+      <p style="margin-bottom: 0.75rem;">I build practical AI systems — from computer vision models that translate sign language to ML pipelines that predict real estate prices. Currently exploring cybersecurity, OSINT, and professional Git workflows alongside my coursework.</p>
+      <p>Looking for stipend internships (Remote/Mumbai) where I can ship real ML projects.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SKILLS ═══════════ -->
+<section id="skills">
+  <span class="section-label">Skills</span>
+  <h2>What I work with</h2>
+  <div class="skills-grid">
+    <div class="skill-tag"><span class="skill-dot dot-blue"></span>Python</div>
+    <div class="skill-tag"><span class="skill-dot dot-blue"></span>SQL</div>
+    <div class="skill-tag"><span class="skill-dot dot-green"></span>Scikit-learn</div>
+    <div class="skill-tag"><span class="skill-dot dot-green"></span>OpenCV</div>
+    <div class="skill-tag"><span class="skill-dot dot-purple"></span>NLP</div>
+    <div class="skill-tag"><span class="skill-dot dot-purple"></span>Computer Vision</div>
+    <div class="skill-tag"><span class="skill-dot dot-amber"></span>Power BI</div>
+    <div class="skill-tag"><span class="skill-dot dot-amber"></span>Data Analysis</div>
+    <div class="skill-tag"><span class="skill-dot dot-blue"></span>Git & GitHub</div>
+    <div class="skill-tag"><span class="skill-dot dot-green"></span>Kali Linux</div>
+    <div class="skill-tag"><span class="skill-dot dot-amber"></span>OSINT</div>
+    <div class="skill-tag"><span class="skill-dot dot-purple"></span>Cybersecurity</div>
+  </div>
+</section>
+
+<!-- ═══════════ PROJECTS ═══════════ -->
+<section id="projects">
+  <span class="section-label">Projects</span>
+  <h2>Selected work</h2>
+  <div class="projects-list">
+
+    <div class="project-card">
+      <h3>Neural-Insight</h3>
+      <p>Deep learning framework for model interpretability and neural network visualization.</p>
+      <div class="stack">
+        <span>Python</span><span>TensorFlow</span><span>NumPy</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Sign Language Recognition</h3>
+      <p>Real-time computer vision system that translates ASL gestures to text using OpenCV and deep learning.</p>
+      <div class="stack">
+        <span>OpenCV</span><span>Python</span><span>CNN</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Spam Detection System</h3>
+      <p>NLP-based email/SMS classifier with high precision spam filtering using TF-IDF and ensemble models.</p>
+      <div class="stack">
+        <span>NLP</span><span>Scikit-learn</span><span>Pandas</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>House Price Prediction</h3>
+      <p>Regression pipeline predicting Mumbai real estate prices using feature engineering and gradient boosting.</p>
+      <div class="stack">
+        <span>Scikit-learn</span><span>XGBoost</span><span>Pandas</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Sales Dashboard</h3>
+      <p>Interactive BI dashboard for sales analytics with real-time KPI tracking and trend visualization.</p>
+      <div class="stack">
+        <span>Power BI</span><span>SQL</span><span>Excel</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>SQL Business Intelligence</h3>
+      <p>Complex SQL queries and data modeling for business decision support and reporting pipelines.</p>
+      <div class="stack">
+        <span>SQL</span><span>PostgreSQL</span><span>Data Modeling</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact">
+  <span class="section-label">Contact</span>
+  <h2>Let's work together</h2>
+  <p>Open to stipend internships, freelance projects, and collaborations in AI/ML.</p>
+  <div class="contact-links">
+    <a href="https://github.com/KevinPratap" class="contact-card" target="_blank">
+      <span class="icon">⌨</span>
+      <div>
+        <div class="label">GitHub</div>
+        <div class="handle">KevinPratap</div>
+      </div>
+    </a>
+    <a href="mailto:kevinpratap@proton.me" class="contact-card">
+      <span class="icon">✉</span>
+      <div>
+        <div class="label">Email</div>
+        <div class="handle">kevinpratap@proton.me</div>
+      </div>
+    </a>
+    <a href="https://linkedin.com/in/kevin-pratap" class="contact-card" target="_blank">
+      <span class="icon">💼</span>
+      <div>
+        <div class="label">LinkedIn</div>
+        <div class="handle">kevin-pratap</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 Kevin Pratap · Built with care
+</footer>
+
+</body>
+</html>
