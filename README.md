@@ -1,64 +1,32 @@
-# 👋 Hi, I’m Kevin Pratap Sidhu
+### 👋 I build multi-agent AI systems.
 
-I’m an **MBA Technology (AI)** student at **SVKM’s NMIMS** focused on building real-world **Machine Learning**, **Computer Vision**, and **Data Analytics** solutions.
+Operate production-grade agent orchestration pipelines at Nous Research's Hermes Agent. Built automated scraper → auditor → writer agent chains processing 100+ items per batch with quality verification at every stage. Deployed 290+ demo sites through automated CI/CD. Led a data team at To-Let Global, improving conversion by 22%.
 
----
-
-## 🔎 What I Do
-
-🔹 **Python | Scikit-Learn | Pandas | NumPy**  
-🔹 **Machine Learning & Model Evaluation**  
-🔹 **Computer Vision & Real-Time Systems**  
-🔹 **Data Visualization & SQL Analytics**  
-🔹 Problem-solving with clean, well-documented code
+**AI Agents · Multi-Agent Orchestration · MCP Tools · Automation Pipelines · Python · Node.js · React**
 
 ---
 
-## 📌 Featured Projects
+### 🔭 What I'm working on
 
-### 🧠 Neural-Insight — Interactive Neural Network Visualization  
-An interactive web application that visually explains how neural networks process text, showing token flow, layer activations, and output probability dynamics.  
-🔹 **Tech:** React, TypeScript  
-🔹 **Focus:** AI explainability, visualization, frontend + AI thinking  
-🔗 https://github.com/KevinPratap/Neural-Insight
+- **Multi-agent orchestration** — coordinating specialized AI agents (scraper, auditor, writer, builder) through a strategy-driven pipeline with quality gates at every stage
+- **Automated lead generation** — full pipeline from web scraping through verification to multi-channel delivery, deployed at scale
+- **Open source** — contributing to Hermes Agent (Nous Research), building reusable agent patterns and automation workflows
 
----
+### 📌 Featured Work
 
-### 🤟 Sign Language to Text Recognition (Computer Vision)  
-A real-time computer vision system that recognizes hand gestures from live webcam input and converts sign language into text.  
-🔹 **Tech:** Python, OpenCV, MediaPipe  
-🔹 **Focus:** Accessibility, gesture recognition, real-world CV challenges  
-🔹 **Features:** Gesture stabilization, confidence thresholds
+**agentic-workflows** — Production architecture for multi-agent AI orchestration. Hierarchical agent system with MCP tool integration, cron-driven scheduling, and quality gates. [→ Repo](https://github.com/KevinPratap/agentic-workflows)
 
----
+**lead-demos** — Scaled deployment pipeline: 290+ responsive demo sites built from templates and deployed to GitHub Pages via automated CI/CD. [→ Repo](https://github.com/KevinPratap/lead-demos)
 
-### 💡 Email Spam Detection  
-A machine learning text classification system to detect spam emails using supervised learning techniques.  
-🔹 **Tech:** Python, Scikit-Learn  
-🔹 **Focus:** Text preprocessing, feature extraction, model evaluation  
-🔗 https://github.com/KevinPratap/EmailspamDetectionPython-ML
+**autostream-ai-agent** — Social-to-lead agentic workflow built with LangGraph. Demonstrates agent chaining for real-world data processing. [→ Repo](https://github.com/KevinPratap/autostream-ai-agent)
 
----
+### ⚡ Quick Stats
 
-### 📊 Housing Price Predictor  
-A regression-based machine learning model to estimate housing prices using structured data.  
-🔹 **Tech:** Python, Regression Models  
-🔹 **Focus:** Data cleaning, EDA, feature engineering, visualization  
-🔗 https://github.com/KevinPratap/Housing-Price-Predictor-using-Python-ML
+- **290+** automated deployments to GitHub Pages
+- **50K+** daily records processed in production pipelines
+- **4-agent** production orchestration system (orchestrator → scraper → auditor → writer)
+- **22%** lead conversion improvement through data-driven optimization
 
----
+### 📫 Contact
 
-## ⭐ Skills & Tools
-
-**Languages:** Python, SQL, TypeScript (basic)  
-**Machine Learning:** Classification, Regression, Model Evaluation  
-**Computer Vision:** OpenCV, MediaPipe  
-**Libraries:** Pandas, NumPy, Scikit-Learn, Matplotlib  
-**Tools:** Git, GitHub, Jupyter
-
----
-
-## 📬 Let’s Connect
-
-🔗 LinkedIn: https://www.linkedin.com/in/kevin-sidhu-71b127185  
-📧 Email: pratapkevin8@gmail.com
+[LinkedIn](https://www.linkedin.com/in/kevin-sidhu-71b127185) · pratapkevin8@gmail.com · [GitHub](https://github.com/KevinPratap)
