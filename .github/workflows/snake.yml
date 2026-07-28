@@ -5,21 +5,34 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Platane/snk@v3
+
+      - name: Generate snake
+        uses: Platane/snk@v3
         with:
           github_user_name: KevinPratap
           outputs: |
-            dist/snake.svg?palette=github-dark
+            snake.svg?palette=github-dark
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist
-          publish_branch: output
-          force_orphan: true
+
+      - name: Push to output branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p /tmp/snake-out
+          cp snake.svg /tmp/snake-out/
+          cd /tmp/snake-out
+          git init
+          git checkout -b output
+          git add snake.svg
+          git commit -m "chore: update snake"
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/KevinPratap/KevinPratap.git
+          git push -f origin output
