@@ -11,8 +11,6 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -22,16 +20,18 @@ jobs:
           github_user_name: KevinPratap
           outputs: github-snake.svg?palette=github-dark
 
-      - name: Push to output branch
+      - name: Deploy to output branch
         run: |
-          cp github-snake.svg /tmp/
-          git checkout --orphan output
-          git reset --hard
-          cp /tmp/github-snake.svg .
-          git add github-snake.svg
+          mkdir -p /tmp/deploy
+          cp "${{ github.workspace }}/github-snake.svg" /tmp/deploy/
+          cd /tmp/deploy
+          git init
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b output
+          git add github-snake.svg
           git commit -m "chore: update snake"
-          gh repo set-default ${{ github.repository }}
-          gh api repos/${{ github.repository }}/git/refs -X POST -f ref=refs/heads/output -f sha=$(git rev-parse HEAD) 2>/dev/null || true
+          git remote add origin "https://github.com/${{ github.repository }}"
           git push origin output --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
