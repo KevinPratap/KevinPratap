@@ -1,62 +1,32 @@
-<p align="center">
-  <img src="https://v3b.fal.media/files/b/0aa412ff/vnDsLLCtcy8DiVBMC55mx_6NmV1bEB.png" width="100%">
-</p>
+### 👋 I build multi-agent AI systems.
 
-<h1 align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=3000&pause=500&color=58A6FF&center=true&vCenter=true&width=600&lines=Kevin+Pratap+Sidhu;AI+Agent+Engineer;Multi-Agent+Systems;Automation+Pipelines" alt="Typing SVG" />
-</h1>
+Operate production-grade agent orchestration pipelines at Nous Research's Hermes Agent. Built automated scraper → auditor → writer agent chains processing 100+ items per batch with quality verification at every stage. Deployed 290+ demo sites through automated CI/CD. Led a data team at To-Let Global, improving conversion by 22%.
 
-<p align="center">
-  <b>Building production multi-agent AI systems @ Nous Research</b>
-</p>
+**AI Agents · Multi-Agent Orchestration · MCP Tools · Automation Pipelines · Python · Node.js · React**
 
 ---
 
-### ⚙️ Stack
+### 🔭 What I'm working on
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black" />
-</p>
+- **Multi-agent orchestration** — coordinating specialized AI agents (scraper, auditor, writer, builder) through a strategy-driven pipeline with quality gates at every stage
+- **Automated lead generation** — full pipeline from web scraping through verification to multi-channel delivery, deployed at scale
+- **Open source** — contributing to Hermes Agent (Nous Research), building reusable agent patterns and automation workflows
 
----
+### 📌 Featured Work
 
-### 🔭 What I build
+**agentic-workflows** — Production architecture for multi-agent AI orchestration. Hierarchical agent system with MCP tool integration, cron-driven scheduling, and quality gates. [→ Repo](https://github.com/KevinPratap/agentic-workflows)
 
-| Area | Stack |
-|------|-------|
-| **Multi-agent orchestration** | Hermes Agent, MCP tools, strategy → worker pipeline with quality gates |
-| **Automated lead pipeline** | Scraper → Auditor → Writer agents, 290+ deployments |
-| **AI interview copilot** | Nebula — Electron + real-time transcription + 6 AI providers |
-| **KDP publishing** | AI-assisted book authoring ("AI Agents for Beginners") |
-| **Fitness tracker** | Next.js + Railway + cron automation |
+**lead-demos** — Scaled deployment pipeline: 290+ responsive demo sites built from templates and deployed to GitHub Pages via automated CI/CD. [→ Repo](https://github.com/KevinPratap/lead-demos)
 
-### 📌 Featured repos
+**autostream-ai-agent** — Social-to-lead agentic workflow built with LangGraph. Demonstrates agent chaining for real-world data processing. [→ Repo](https://github.com/KevinPratap/autostream-ai-agent)
 
-- [**agentic-workflows**](https://github.com/KevinPratap/agentic-workflows) — Production multi-agent architecture with MCP tool integration
-- [**lead-demos**](https://github.com/KevinPratap/lead-demos) — 290+ automated demo deployments via CI/CD
-- [**autostream-ai-agent**](https://github.com/KevinPratap/autostream-ai-agent) — LangGraph social-to-lead agentic workflow
-- [**nebula-interview-ai**](https://github.com/KevinPratap/nebula-interview-ai) — Real-time AI interview copilot
-- [**24-week-transformation**](https://github.com/KevinPratap/24-week-transformation) — Monochrome fitness tracker on Railway
+### ⚡ Quick Stats
 
----
+- **290+** automated deployments to GitHub Pages
+- **50K+** daily records processed in production pipelines
+- **4-agent** production orchestration system (orchestrator → scraper → auditor → writer)
+- **22%** lead conversion improvement through data-driven optimization
 
-### 🐍 Contribution graph
+### 📫 Contact
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/KevinPratap/KevinPratap/output/snake.svg" alt="Snake" />
-</p>
-
----
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/kevin-sidhu-71b127185">LinkedIn</a> ·
-  <a href="mailto:pratapkevin8@gmail.com">Email</a> ·
-  <a href="https://www.amazon.com/-/e/B0H6L5ZK6V">Amazon Author</a>
-</p>
+[LinkedIn](https://www.linkedin.com/in/kevin-sidhu-71b127185) · pratapkevin8@gmail.com · [GitHub](https://github.com/KevinPratap)
