@@ -14,15 +14,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Generate snake SVG
-        run: |
-          npx -y github:platane/snk --user=KevinPratap --out=github-snake.svg --palette=github-dark 2>&1
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Generate snake
+        uses: Platane/snk@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: .
-          publish_branch: output
-          destination_dir: ./
-          keep_files: false
+          github_user_name: KevinPratap
+          outputs: github-snake.svg?palette=github-dark
+
+      - name: Push to output branch
+        run: |
+          REPO="https://github.com/${{ github.repository }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout --orphan output
+          git reset --hard
+          mv /github/workspace/github-snake.svg ./ 2>/dev/null || true
+          git add github-snake.svg
+          git commit -m "chore: update snake"
+          git push "${REPO}" output --force
