@@ -22,12 +22,12 @@ jobs:
 
       - name: Push to output branch
         run: |
-          REPO="https://github.com/${{ github.repository }}"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cp github-snake.svg /tmp/
           git checkout --orphan output
           git reset --hard
-          mv /github/workspace/github-snake.svg ./ 2>/dev/null || true
+          cp /tmp/github-snake.svg .
           git add github-snake.svg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update snake"
-          git push "${REPO}" output --force
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} output --force
