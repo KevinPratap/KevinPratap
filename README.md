@@ -1,32 +1,50 @@
-### 👋 I build multi-agent AI systems.
-
-Operate production-grade agent orchestration pipelines at Nous Research's Hermes Agent. Built automated scraper → auditor → writer agent chains processing 100+ items per batch with quality verification at every stage. Deployed 290+ demo sites through automated CI/CD. Led a data team at To-Let Global, improving conversion by 22%.
-
-**AI Agents · Multi-Agent Orchestration · MCP Tools · Automation Pipelines · Python · Node.js · React**
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KevinPratap/KevinPratap/main/animated_header.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/KevinPratap/KevinPratap/main/animated_header.svg">
+  <img src="https://raw.githubusercontent.com/KevinPratap/KevinPratap/main/animated_header.svg" width="100%">
+</picture>
 
 ---
 
-### 🔭 What I'm working on
+### 📊 Activity
 
-- **Multi-agent orchestration** — coordinating specialized AI agents (scraper, auditor, writer, builder) through a strategy-driven pipeline with quality gates at every stage
-- **Automated lead generation** — full pipeline from web scraping through verification to multi-channel delivery, deployed at scale
-- **Open source** — contributing to Hermes Agent (Nous Research), building reusable agent patterns and automation workflows
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=KevinPratap&show_icons=true&hide_border=true&theme=dark&bg_color=0d1117&text_color=c9d1d9&icon_color=58a6ff&count_private=true&hide_title=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=KevinPratap&layout=compact&hide_border=true&theme=dark&bg_color=0d1117&text_color=c9d1d9&count_private=true&hide_title=true" width="48%" />
+</p>
 
-### 📌 Featured Work
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=KevinPratap&theme=dark&hide_border=true&background=0d1117&stroke=58a6ff&ring=58a6ff&fire=58a6ff&currStreakNum=c9d1d9" width="70%" />
+</p>
 
-**agentic-workflows** — Production architecture for multi-agent AI orchestration. Hierarchical agent system with MCP tool integration, cron-driven scheduling, and quality gates. [→ Repo](https://github.com/KevinPratap/agentic-workflows)
+---
 
-**lead-demos** — Scaled deployment pipeline: 290+ responsive demo sites built from templates and deployed to GitHub Pages via automated CI/CD. [→ Repo](https://github.com/KevinPratap/lead-demos)
+### 🐍 Contribution Snake
 
-**autostream-ai-agent** — Social-to-lead agentic workflow built with LangGraph. Demonstrates agent chaining for real-world data processing. [→ Repo](https://github.com/KevinPratap/autostream-ai-agent)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/KevinPratap/KevinPratap/output/snake.svg" alt="Snake animation" />
+</p>
 
-### ⚡ Quick Stats
+---
 
-- **290+** automated deployments to GitHub Pages
-- **50K+** daily records processed in production pipelines
-- **4-agent** production orchestration system (orchestrator → scraper → auditor → writer)
-- **22%** lead conversion improvement through data-driven optimization
+### 🔭 What I build
 
-### 📫 Contact
+| System | Stack |
+|--------|-------|
+| **Multi-agent orchestration** | Hermes Agent, MCP tools, strategy → worker pipeline with quality gates |
+| **Automated lead pipeline** | Scraper → Auditor → Writer agents, 290+ deployments, cron-driven |
+| **AI interview copilot** | Nebula — Electron + real-time transcription + 6 AI providers |
+| **KDP publishing pipeline** | AI-assisted book authoring, cover gen, Amazon publishing |
+| **Fitness transformation app** | Next.js + Railway + cron automation (monochrome premium) |
 
-[LinkedIn](https://www.linkedin.com/in/kevin-sidhu-71b127185) · pratapkevin8@gmail.com · [GitHub](https://github.com/KevinPratap)
+### 📌 Featured
+
+- **[agentic-workflows](https://github.com/KevinPratap/agentic-workflows)** — production multi-agent architecture with MCP tool integration
+- **[lead-demos](https://github.com/KevinPratap/lead-demos)** — 290+ automated demo site deployments via CI/CD
+- **[autostream-ai-agent](https://github.com/KevinPratap/autostream-ai-agent)** — LangGraph social-to-lead agentic workflow
+- **[nebula-interview-ai](https://github.com/KevinPratap/nebula-interview-ai)** — real-time AI interview copilot
+- **[24-week-transformation](https://github.com/KevinPratap/24-week-transformation)** — monochrome fitness tracker on Railway
+
+### 📫
+
+[LinkedIn](https://www.linkedin.com/in/kevin-sidhu-71b127185) · pratapkevin8@gmail.com · [Amazon Author](https://www.amazon.com/-/e/B0H6L5ZK6V)
