@@ -5,21 +5,24 @@ on:
     - cron: "0 0 * * *"
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Platane/snk@v3
-        with:
-          github_user_name: KevinPratap
-          outputs: |
-            dist/github-snake.svg?palette=github-dark
+      - name: Generate snake SVG
+        run: |
+          npx -y github:platane/snk --user=KevinPratap --out=github-snake.svg --palette=github-dark 2>&1
 
-      - uses: crazy-max/ghaction-github-pages@v3.1.0
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          target_branch: output
-          build_dir: dist
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          publish_branch: output
+          destination_dir: ./
+          keep_files: false
