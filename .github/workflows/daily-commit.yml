@@ -1,0 +1,24 @@
+name: Daily Commit
+
+on:
+  schedule:
+    - cron: "0 10 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Keep the grid green
+        run: |
+          date -u '+%Y-%m-%dT%H:%M:%SZ' > .daily
+          git config user.name "kevinpratap"
+          git config user.email "pratapkevin8@gmail.com"
+          git add .daily
+          git commit -m "chore: daily sync $(date -u '+%Y-%m-%d')"
+          git push
