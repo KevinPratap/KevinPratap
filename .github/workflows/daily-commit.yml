@@ -1,12 +1,38 @@
 name: Daily Commit
 
+# Feeds the GitHub contribution graph.
+#   DAILY_TARGET    = contributions the graph should show for a day
+#   COMMITS_PER_RUN = commits made by each scheduled run
+# Five runs a day, 6h apart, on odd minutes: scheduled workflow runs are often
+# delayed by hours, so spacing them wider than the usual delay keeps them from
+# collapsing into one day-part. The last run tops the day up to DAILY_TARGET,
+# so a dropped or very late run cannot leave a pale day behind.
+# To change the total, edit the two numbers below. Nothing else needs to change.
+
 on:
   schedule:
-    - cron: "0 10 * * *"
+    - cron: "23 1 * * *"
+    - cron: "23 7 * * *"
+    - cron: "23 13 * * *"
+    - cron: "23 19 * * *"
+    - cron: "41 23 * * *"
   workflow_dispatch:
+    inputs:
+      commits:
+        description: "Commits to make in this run (blank = COMMITS_PER_RUN)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
+
+concurrency:
+  group: daily-commit
+  cancel-in-progress: false
+
+env:
+  DAILY_TARGET: "12"
+  COMMITS_PER_RUN: "3"
 
 jobs:
   commit:
@@ -14,11 +40,61 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Keep the grid green
+      - name: Set up git
         run: |
-          date -u '+%Y-%m-%dT%H:%M:%SZ' > .daily
           git config user.name "kevinpratap"
           git config user.email "pratapkevin8@gmail.com"
-          git add .daily
-          git commit -m "chore: daily sync $(date -u '+%Y-%m-%d')"
-          git push
+          git config pull.rebase true
+
+      - name: Decide how many commits this run makes
+        id: plan
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          INPUT_COMMITS: ${{ github.event.inputs.commits }}
+        run: |
+          set -euo pipefail
+          day=$(date -u '+%Y-%m-%d')
+          n="$INPUT_COMMITS"
+          case "$n" in ''|*[!0-9]*) n="" ;; esac
+          if [ -z "$n" ]; then n="$COMMITS_PER_RUN"; fi
+          hour=$(date -u '+%H')
+          if [ "${{ github.event.schedule }}" = "41 23 * * *" ] || [ "$hour" = "23" ]; then
+            today=$(gh api graphql -f query='query{user(login:"KevinPratap"){contributionsCollection{contributionCalendar{weeks{contributionDays{date contributionCount}}}}}}' \
+              --jq "[.data.user.contributionsCollection.contributionCalendar.weeks[].contributionDays[] | select(.date == \"$day\") | .contributionCount] | add // 0")
+            need=$(( DAILY_TARGET - today ))
+            echo "$day already has $today contributions, target $DAILY_TARGET"
+            if [ "$need" -gt "$n" ]; then n="$need"; fi
+          fi
+          if [ "$n" -gt 40 ]; then n=40; fi
+          if [ "$n" -lt 1 ]; then n=0; fi
+          echo "n=$n" >> "$GITHUB_OUTPUT"
+          echo "day=$day" >> "$GITHUB_OUTPUT"
+
+      - name: Make the commits
+        if: steps.plan.outputs.n != '0'
+        run: |
+          set -euo pipefail
+          n="${{ steps.plan.outputs.n }}"
+          day="${{ steps.plan.outputs.day }}"
+          for i in $(seq 1 "$n"); do
+            ts=$(date -u -d "-$(( i * 6 )) minutes" '+%Y-%m-%dT%H:%M:%SZ')
+            printf '%s  %s  %02d/%02d\n' "$ts" "keep the grid green" "$i" "$n" >> .daily
+            git add .daily
+            GIT_AUTHOR_DATE="$ts" GIT_COMMITTER_DATE="$ts" \
+              git commit -m "chore: daily sync $day ($i/$n)"
+          done
+          echo "made $n commit(s) dated within $day"
+
+      - name: Push
+        if: steps.plan.outputs.n != '0'
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main && git push origin HEAD:main; then
+              echo "pushed on attempt $attempt"
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "push failed after 5 attempts" >&2
+          exit 1
