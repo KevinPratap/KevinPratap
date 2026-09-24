@@ -54,14 +54,15 @@ jobs:
         run: |
           set -euo pipefail
           day=$(date -u '+%Y-%m-%d')
-          n="$INPUT_COMMITS"
+          n="${INPUT_COMMITS:-}"
           case "$n" in ''|*[!0-9]*) n="" ;; esac
           if [ -z "$n" ]; then n="$COMMITS_PER_RUN"; fi
           hour=$(date -u '+%H')
           if [ "${{ github.event.schedule }}" = "41 23 * * *" ] || [ "$hour" = "23" ]; then
             today=$(gh api graphql -f query='query{user(login:"KevinPratap"){contributionsCollection{contributionCalendar{weeks{contributionDays{date contributionCount}}}}}}' \
-              --jq "[.data.user.contributionsCollection.contributionCalendar.weeks[].contributionDays[] | select(.date == \"$day\") | .contributionCount] | add // 0")
-            need=$(( DAILY_TARGET - today ))
+              --jq "[.data.user.contributionsCollection.contributionCalendar.weeks[].contributionDays[] | select(.date == \"$day\") | .contributionCount] | add // 0" 2>/dev/null || echo 0)
+            case "$today" in ''|*[!0-9]*) today=0 ;; esac
+            need=$(( DAILY_TARGET - 10#$today ))
             echo "$day already has $today contributions, target $DAILY_TARGET"
             if [ "$need" -gt "$n" ]; then n="$need"; fi
           fi
