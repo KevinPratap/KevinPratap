@@ -1,55 +1,27 @@
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3500&pause=500&color=58A6FF&center=true&vCenter=true&width=600&lines=Kevin+Pratap+Sidhu;AI+Agent+Engineer;Multi-Agent+Systems;Automation+Pipelines" alt="Typing SVG" />
-</p>
+<a href="https://kevinpratap.github.io">
+  <img src="assets/reel.webp" alt="A scroll through kevinpratap.github.io: a cloud of about 110,000 particles forms the name Kevin Pratap Sidhu, then becomes a neural constellation, project screenshots, a data pipeline and a hand." width="100%">
+</a>
 
-<p align="center">
-  <b>Building production multi-agent AI systems @ Nous Research</b>
-</p>
+# Kevin Pratap Sidhu
 
----
+Motion designer and AI engineer, Mumbai.
 
-### 🛠 Stack
+I design interfaces for products that don't exist yet. Then I build them: the screens, the motion that makes them feel alive, and the AI systems running behind them.
 
-<p align="center">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,ts,react,nextjs,nodejs,sqlite,docker,linux,git,github,neovim&perline=11" />
-  </a>
-</p>
+The reel above is my portfolio, captured: one canvas, one cloud of about 110,000 particles, driven by scroll. [Open the real thing](https://kevinpratap.github.io) and turn the sound on. Every note is synthesized live in the browser.
 
----
+## Work
 
-### 🔭 What I build
+- [Tripp'in AI](https://github.com/KevinPratap/Tripp-in): a planner that hands you a real itinerary instead of a chat answer, dressed as a flight briefing.
+- [AI Tools Directory](https://kevinpratap.github.io/ai-tools-directory/): twelve hundred AI tools you can actually scan.
+- [Cast](https://kevinpratap.github.io/cast/?demo&auto): superpowers from real hand signs, in your browser. MediaPipe tracks your hands on your own device, and every sign drives real particle physics.
 
-| Area | Stack |
-|------|-------|
-| **Multi-agent orchestration** | Hermes Agent, MCP tools, strategy → worker pipeline with quality gates |
-| **Automated lead pipeline** | Scraper → Auditor → Writer agents, 290+ deployments |
-| **AI interview copilot** | Nebula — Electron + real-time transcription + 6 AI providers |
-| **KDP publishing** | AI-assisted book authoring ("AI Agents for Beginners") |
-| **Fitness tracker** | Next.js + Railway + cron automation |
+## Systems
 
-### 📌 Featured
+- [Agentic workflows](https://github.com/KevinPratap/agentic-workflows): hierarchical agents with quality gates.
+- [Shorts Factory](https://github.com/KevinPratap/shorts-factory): source video in, generated clips out.
+- [Hermes web dashboard](https://github.com/KevinPratap/hermes-web-dashboard): sessions, cron jobs and skills for agents.
+- [24 Week Transformation](https://github.com/KevinPratap/24-week-transformation): fitness tracker with cron-pushed daily content.
+- [AI Agents for Beginners](https://www.amazon.com/-/e/B0H6L5ZK6V): a 200 page book, written and produced solo.
 
-- **[agentic-workflows](https://github.com/KevinPratap/agentic-workflows)** — Production multi-agent architecture with MCP tool integration
-- **[lead-demos](https://github.com/KevinPratap/lead-demos)** — 290+ automated demo deployments via CI/CD
-- **[autostream-ai-agent](https://github.com/KevinPratap/autostream-ai-agent)** — LangGraph social-to-lead agentic workflow
-- **[nebula-interview-ai](https://github.com/KevinPratap/nebula-interview-ai)** — Real-time AI interview copilot
-- **[24-week-transformation](https://github.com/KevinPratap/24-week-transformation)** — Monochrome fitness tracker on Railway
-
----
-
-<!-- snake -->
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/KevinPratap/KevinPratap/output/github-snake.svg" />
-    <img alt="Contribution snake" src="https://raw.githubusercontent.com/KevinPratap/KevinPratap/output/github-snake.svg" />
-  </picture>
-</p>
-
----
-
-<p align="center">
-  <a href="https://www.linkedin.com/in/kevin-sidhu-71b127185">LinkedIn</a> ·
-  <a href="mailto:pratapkevin8@gmail.com">Email</a> ·
-  <a href="https://www.amazon.com/-/e/B0H6L5ZK6V">Amazon Author</a>
-</p>
+[Email](mailto:pratapkevin8@gmail.com) · [LinkedIn](https://in.linkedin.com/in/kevin-sidhu-71b127185) · [Plain version of the portfolio](https://kevinpratap.github.io/print/)
